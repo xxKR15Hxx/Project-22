@@ -4,6 +4,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+var rect1
 
 function preload() {
 	helicopterIMG = loadImage("helicopter.png")
@@ -38,7 +39,7 @@ function setup() {
 	ground = Bodies.rectangle(width / 2, 650, width, 10, { isStatic: true });
 	World.add(world, ground);
 
-
+	rect1 = new box(200, 200, 40, 40);
 	Engine.run(engine);
 
 }
@@ -49,7 +50,9 @@ function draw() {
 	background(0);
 	packageSprite.x = packageBody.position.x
 	packageSprite.y = packageBody.position.y
+	
 	drawSprites();
+	rect1.display;
 
 }
 
